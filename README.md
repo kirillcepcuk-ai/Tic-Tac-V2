@@ -88,7 +88,7 @@ tic-tac-toe-bot/
 ```bash
 # Clone repository
 git clone https://github.com/kirillcepcuk-ai/Tic-Tac-V2
-cd Tic-Tac-Toe-Discord-bot
+cd Tic-Tac-V2
 
 # Install dependencies
 make install
