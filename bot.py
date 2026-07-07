@@ -1,13 +1,12 @@
-import discord # type: ignore
-from discord.ext import commands # type: ignore
+import discord
+from discord.ext import commands
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-from database import init_db # type: ignore
-from services.game_service import GameService # type: ignore
+from services.game_service import GameService
 from ui import TicTacToeView
 from embeds import game_embed
-from utils.render import get_player_names # pyright: ignore[reportMissingImports]
+from utils.render import get_player_names
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -60,7 +59,6 @@ async def restore_active_games() -> None:
 
 @bot.event
 async def on_ready() -> None:
-    await init_db()
     for file in os.listdir("./cogs"):
         if file.endswith(".py") and file != "__init__.py":
             await bot.load_extension(f"cogs.{file[:-3]}")
@@ -77,4 +75,4 @@ async def on_interaction(interaction: discord.Interaction) -> None:
 
 @bot.event
 async def on_command_error(ctx: commands.Context, error: commands.CommandError) -> None:
-    logger.error(f"Ошибка команды: {error}")
+    logger.error(f"❌ Ошибка команды: {error}")
