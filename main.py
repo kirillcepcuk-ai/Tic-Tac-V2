@@ -1,5 +1,5 @@
 from bot import bot
-from config import TOKEN # pyright: ignore[reportMissingImports]
+from config import TOKEN
 import asyncio
 import logging
 
