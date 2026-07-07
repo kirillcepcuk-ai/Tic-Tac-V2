@@ -1,16 +1,16 @@
 import asyncio
 from logging.config import fileConfig
-from sqlalchemy import pool # pyright: ignore[reportMissingImports]
-from sqlalchemy.engine import Connection # type: ignore
-from sqlalchemy.ext.asyncio import async_engine_from_config # type: ignore
-from alembic import context # type: ignore
+from sqlalchemy import pool
+from sqlalchemy.engine import Connection
+from sqlalchemy.ext.asyncio import async_engine_from_config
+from alembic import context
 import sys
 import os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
-from database import Base # type: ignore
-from config import DATABASE_URL # type: ignore
+from database import Base
+from config import DATABASE_URL
 
 config = context.config
 config.set_main_option("sqlalchemy.url", DATABASE_URL)
